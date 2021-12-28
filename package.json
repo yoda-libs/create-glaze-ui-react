@@ -5,7 +5,6 @@
   "author": "Juliano Teixeira",
   "bin": "bin/cli.js",
   "license": "MIT",
-  "main": "src/navbar.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/yoda-libs/create-glaze-ui-react-app"
@@ -18,7 +17,8 @@
     "glaze",
     "glazeui",
     "glaze-ui",
-    "create glaze ui"],
+    "create glaze ui"
+  ],
   "scripts": {
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",
@@ -54,6 +54,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.6",
     "jest-cli": "^27.0.6",
+    "json": "^11.0.0",
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.1",
     "react-hot-loader": "^4.13.0",
