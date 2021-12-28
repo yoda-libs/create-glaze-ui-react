@@ -16,6 +16,7 @@ const repoName = process.argv[2];
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/yoda-libs/create-glaze-ui-react ${repoName}`;
 const installDepsCommand = `cd ${repoName} && yarn install`;
 const changePackageNameCommand = `cd ${repoName} && node_modules/.bin/json -I -f package.json -e 'this.name="${repoName}"'`;
+const renameRootFileCommand = `cd ${repoName} && mv src/root.js src/${repoName}.js`;
 
 console.log(`Cloning the repository with name ${repoName}`);
 const  checkedOut = runCommand(gitCheckoutCommand);
@@ -27,6 +28,9 @@ if (!installedDeps) process.exit(-1);
 
 const changedPackageName = runCommand(changePackageNameCommand);
 if (!changedPackageName) process.exit(-1);
+
+const changedRootFileName = runCommand(renameRootFileCommand);
+if (!changedRootFileName) process.exit(-1);
 
 console.log("Congratulations! You are ready. Follow these commands to start.");
 console.log(`cd ${repoName}`);
