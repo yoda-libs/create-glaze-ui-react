@@ -1,10 +1,11 @@
 {
   "name": "create-glaze-ui-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A react micro-frontend template for Glaze UI",
   "author": "Juliano Teixeira",
   "bin": "bin/cli.js",
   "license": "MIT",
+  "main": "src/navbar.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/yoda-libs/create-glaze-ui-react-app"
