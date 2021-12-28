@@ -17,6 +17,7 @@ const gitCheckoutCommand = `git clone --depth 1 https://github.com/yoda-libs/cre
 const installDepsCommand = `cd ${repoName} && yarn install`;
 const changePackageNameCommand = `cd ${repoName} && node_modules/.bin/json -I -f package.json -e 'this.name="${repoName}"'`;
 const renameRootFileCommand = `cd ${repoName} && mv src/root.js src/${repoName}.js`;
+const removeBinFolderCommand = `cd ${repoName} && rm -rf bin`;
 
 console.log(`Cloning the repository with name ${repoName}`);
 const  checkedOut = runCommand(gitCheckoutCommand);
@@ -31,6 +32,9 @@ if (!changedPackageName) process.exit(-1);
 
 const changedRootFileName = runCommand(renameRootFileCommand);
 if (!changedRootFileName) process.exit(-1);
+
+const removedBinFolder = runCommand(removeBinFolderCommand);
+if (!removedBinFolder) process.exit(-1);
 
 console.log("Congratulations! You are ready. Follow these commands to start.");
 console.log(`cd ${repoName}`);
