@@ -29,7 +29,6 @@
     "check-format": "prettier --check .",
     "test": "cross-env BABEL_ENV=test jest",
     "watch-tests": "cross-env BABEL_ENV=test jest --watch",
-    "prepare": "husky install",
     "coverage": "cross-env BABEL_ENV=test jest --coverage"
   },
   "devDependencies": {
@@ -40,6 +39,8 @@
     "@babel/preset-react": "^7.14.5",
     "@babel/runtime": "^7.15.3",
     "@hot-loader/react-dom": "^17.0.1",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
     "babel-jest": "^27.0.6",
     "babel-loader": "^8.2.3",
     "concurrently": "^6.2.1",
