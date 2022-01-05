@@ -15,7 +15,7 @@ const runCommand = command => {
 const repoName = process.argv[2];
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/yoda-libs/create-glaze-ui-react ${repoName}`;
 const installDepsCommand = `cd ${repoName} && yarn install`;
-const changePackageNameCommand = `cd ${repoName} && node_modules/.bin/json -I -f package.json -e 'this.name="${repoName}"'`;
+const cleanupPackageJsonCommand = `cd ${repoName} && node_modules/.bin/json -I -f package.json -e 'this.name="${repoName}"; delete this.author; delete this.bin; delete this.repository; delete this.keywords; this.description=""'`;
 const renameRootFileCommand = `cd ${repoName} && mv src/root.js src/${repoName}.js`;
 const removeBinFolderCommand = `cd ${repoName} && rm -rf bin`;
 
@@ -27,8 +27,8 @@ console.log(`Installing dependencies for ${repoName}`);
 const installedDeps = runCommand(installDepsCommand);
 if (!installedDeps) process.exit(-1);
 
-const changedPackageName = runCommand(changePackageNameCommand);
-if (!changedPackageName) process.exit(-1);
+const cleanupPackageJson = runCommand(cleanupPackageJsonCommand);
+if (!cleanupPackageJson) process.exit(-1);
 
 const changedRootFileName = runCommand(renameRootFileCommand);
 if (!changedRootFileName) process.exit(-1);

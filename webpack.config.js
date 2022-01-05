@@ -30,11 +30,6 @@ module.exports = {
     client: { webSocketURL: { hostname: 'localhost' } },
     allowedHosts: 'all'
   },
-  resolve: {
-    alias: {
-      'react-dom': '@hot-loader/react-dom',
-    },
-  },
   externals: [ 'react', 'react-dom' ],
   output: {
     libraryTarget: 'system', 
