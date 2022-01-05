@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.1.3",
-    "glaze-ui": "file:../../glaze-ui",
+    "glaze-ui": "^1.0.2",
     "react-bootstrap": "^2.0.3",
     "systemjs-webpack-interop": "^2.3.7"
   }
