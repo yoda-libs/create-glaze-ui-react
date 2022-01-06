@@ -5,7 +5,7 @@ import { glazeReact } from "glaze-ui";
 import { hot } from "react-hot-loader/root";
 
 export const {mount, unmount} = glazeReact(
-  hot(Root), 
+  hot(() => <Root />),
   React, 
   ReactDOM
 );

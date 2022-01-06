@@ -1,6 +1,6 @@
 {
   "name": "create-glaze-ui-react",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A react micro-frontend template for Glaze UI",
   "author": "Juliano Teixeira",
   "bin": "bin/cli.js",
@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.1.3",
-    "glaze-ui": "^1.0.2",
+    "glaze-ui": "latest",
     "react-bootstrap": "^2.0.3",
     "systemjs-webpack-interop": "^2.3.7"
   }
