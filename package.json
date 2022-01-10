@@ -1,6 +1,6 @@
 {
   "name": "create-glaze-ui-react",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A react micro-frontend template for Glaze UI",
   "author": "Juliano Teixeira",
   "bin": "bin/cli.js",

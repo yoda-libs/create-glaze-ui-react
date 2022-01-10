@@ -1,11 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { hot } from 'react-hot-loader';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { useEffect } from 'react';
 
-export default function Root(props) {
+const Root = props => {
   const { glaze, name } = props;
   useEffect(() => {
     // subscribe to messages from glaze framework
@@ -35,3 +36,5 @@ export default function Root(props) {
     </Navbar>
   );
 }
+
+export default hot(module)(Root);
