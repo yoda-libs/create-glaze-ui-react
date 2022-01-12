@@ -11,7 +11,7 @@ module.exports = (env, options) => {
     entry: [`./${name}.js`],
     plugins: [
       new SystemJSPublicPathWebpackPlugin(),
-    ].filter(Boolean),
+    ],
     module: {
       rules: [
         {
