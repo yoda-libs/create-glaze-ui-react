@@ -1,46 +1,21 @@
-const path = require('path');
-const SystemJSPublicPathWebpackPlugin = require("systemjs-webpack-interop/SystemJSPublicPathWebpackPlugin");
-const name = require('./package.json').name;
+const { setupWebpackReact } = require('glaze-ui-webpack-utils');
+const projectName = require('./package.json').name;
 
-module.exports = (env, options) => {
-  const isDev = options.mode !== 'production';
-
+module.exports = setupWebpackReact(projectName, (config, isDev) => {
   return {
-    mode: isDev ? 'development' : 'production',
-    context: path.resolve(__dirname, 'src'),
-    entry: [`./${name}.js`],
-    plugins: [
-      new SystemJSPublicPathWebpackPlugin(),
-    ],
-    module: {
-      rules: [
-        {
-          test: /\.(js|jsx)$/,
-          exclude: /node_modules/,
-          use: ["babel-loader"],
-        },
-        {
-          test: /\.css$/i,
-          use: ["style-loader", "css-loader"],
-        },
-      ],
-    },
-    devtool: 'source-map',
-    devServer: {
-      hot: true,
-      historyApiFallback: true,
-      headers: { 'Access-Control-Allow-Origin': '*' },
-      client: { webSocketURL: { hostname: 'localhost' } },
-      allowedHosts: 'all'
-    },
+    ...config,
+
+    // add custom webpack config here
+    
+    
+    // add to extenals libraries specified in bootstrap sharedLibs
+    // refer to https://www.npmjs.com/package/glaze-ui#bootstrap
     externals: [ 'react', 'react-dom' ],
-    output: {
-      libraryTarget: 'system', 
-      clean: true,
-      filename: `${name}.js`, // name of the generated bundle
-      uniqueName: `${name}`,
-      devtoolNamespace: `${name}`,
-      publicPath: "",
-    }
-  };
-};
+
+    // example on how to disable hot reloading
+    // devServer: {
+    //   ...config.devServer,
+    //   hot: false
+    // },
+  }
+});

@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { hot } from 'react-hot-loader';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -37,4 +36,5 @@ const Root = props => {
   );
 }
 
-export default hot(module)(Root);
+
+export default Root;
